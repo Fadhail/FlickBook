@@ -23,62 +23,54 @@ namespace FlickBook.Views
 
         private void Main_SizeChanged(object sender, EventArgs e)
         {
-            if (moviePage != null)
-            {
-                moviePage.WindowState = FormWindowState.Maximized;
-            }
+            moviePage.WindowState = FormWindowState.Maximized;
         }
         private void movieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(riwayatTransaksi != null)
-            {
-                riwayatTransaksi.Close();
-                riwayatTransaksi = null;
-            }
-
-            if (moviePage == null)
-            {
-                moviePage = new Movie();
-                moviePage.MdiParent = this;
-                moviePage.FormClosed += new FormClosedEventHandler(moviePage_FormClosed);
-                moviePage.WindowState = FormWindowState.Maximized;
-                moviePage.Show();
-            }
-            else
-            {
-                moviePage.Activate();
-            }
-        }
-        private void moviePage_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            moviePage = null;
+            Movie movie = new Movie();
+            movie.MdiParent = this;
+            movie.WindowState = FormWindowState.Maximized;
+            movie.Show();
         }
 
-        private void riwayatTransaksiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void theaterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (moviePage != null)
-            {
-                moviePage.Close();
-                moviePage = null;
-            }
-
-            if (riwayatTransaksi == null)
-            {
-                riwayatTransaksi = new Riwayat();
-                riwayatTransaksi.MdiParent = this;
-                riwayatTransaksi.FormClosed += new FormClosedEventHandler(riwayatTransaksi_FormClosed);
-                riwayatTransaksi.WindowState = FormWindowState.Maximized;
-                riwayatTransaksi.Show();
-            }
-            else
-            {
-                riwayatTransaksi.Activate();
-            }
+            Theater theater = new Theater();
+            theater.MdiParent = this;
+            theater.WindowState = FormWindowState.Maximized;
+            theater.Show();
         }
 
-        private void riwayatTransaksi_FormClosed(object sender, FormClosedEventArgs e)
+        private void seatToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            riwayatTransaksi = null;
+            Seat seat = new Seat();
+            seat.MdiParent = this;
+            seat.WindowState = FormWindowState.Maximized;
+            seat.Show();
+        }
+
+        private void riwayatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Riwayat riwayat = new Riwayat();
+            riwayat.MdiParent = this;
+            riwayat.WindowState = FormWindowState.Maximized;
+            riwayat.Show();
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            profile.MdiParent = this;
+            profile.WindowState = FormWindowState.Maximized;
+            profile.Show();
+        }
+
+        private void myTicketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ticket ticket = new Ticket();
+            ticket.MdiParent = this;
+            ticket.WindowState = FormWindowState.Maximized;
+            ticket.Show();
         }
     }
 }

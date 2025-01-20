@@ -1,6 +1,6 @@
 ﻿namespace FlickBook.Views
 {
-    partial class Riwayat
+    partial class Profile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.riwayatLabel = new System.Windows.Forms.Label();
+            this.ProfilLlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // riwayatLabel
+            // ProfilLlabel
             // 
-            this.riwayatLabel.AutoSize = true;
-            this.riwayatLabel.Location = new System.Drawing.Point(82, 65);
-            this.riwayatLabel.Name = "riwayatLabel";
-            this.riwayatLabel.Size = new System.Drawing.Size(94, 13);
-            this.riwayatLabel.TabIndex = 0;
-            this.riwayatLabel.Text = "Riwayat Transaksi";
+            this.ProfilLlabel.AutoSize = true;
+            this.ProfilLlabel.Location = new System.Drawing.Point(52, 36);
+            this.ProfilLlabel.Name = "ProfilLlabel";
+            this.ProfilLlabel.Size = new System.Drawing.Size(36, 13);
+            this.ProfilLlabel.TabIndex = 0;
+            this.ProfilLlabel.Text = "Profile";
             // 
-            // Riwayat
+            // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 562);
-            this.Controls.Add(this.riwayatLabel);
-            this.Name = "Riwayat";
-            this.Text = "Riwayat";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ProfilLlabel);
+            this.Name = "Profile";
+            this.Text = "Profile";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label riwayatLabel;
+        private System.Windows.Forms.Label ProfilLlabel;
     }
 }

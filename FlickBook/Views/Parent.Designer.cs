@@ -30,7 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.movieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.riwayatTransaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.theaterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seatToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.riwayatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,7 +44,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.movieToolStripMenuItem,
-            this.riwayatTransaksiToolStripMenuItem});
+            this.TicketToolStripMenuItem,
+            this.seatToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1064, 24);
@@ -52,12 +59,59 @@
             this.movieToolStripMenuItem.Text = "Movie";
             this.movieToolStripMenuItem.Click += new System.EventHandler(this.movieToolStripMenuItem_Click);
             // 
-            // riwayatTransaksiToolStripMenuItem
+            // TicketToolStripMenuItem
             // 
-            this.riwayatTransaksiToolStripMenuItem.Name = "riwayatTransaksiToolStripMenuItem";
-            this.riwayatTransaksiToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
-            this.riwayatTransaksiToolStripMenuItem.Text = "Riwayat Transaksi";
-            this.riwayatTransaksiToolStripMenuItem.Click += new System.EventHandler(this.riwayatTransaksiToolStripMenuItem_Click);
+            this.TicketToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.theaterToolStripMenuItem,
+            this.seatToolStripMenuItem1,
+            this.riwayatToolStripMenuItem});
+            this.TicketToolStripMenuItem.Name = "TicketToolStripMenuItem";
+            this.TicketToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.TicketToolStripMenuItem.Text = "Admin View";
+            // 
+            // theaterToolStripMenuItem
+            // 
+            this.theaterToolStripMenuItem.Name = "theaterToolStripMenuItem";
+            this.theaterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.theaterToolStripMenuItem.Text = "Theater";
+            this.theaterToolStripMenuItem.Click += new System.EventHandler(this.theaterToolStripMenuItem_Click);
+            // 
+            // seatToolStripMenuItem1
+            // 
+            this.seatToolStripMenuItem1.Name = "seatToolStripMenuItem1";
+            this.seatToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.seatToolStripMenuItem1.Text = "Seat";
+            this.seatToolStripMenuItem1.Click += new System.EventHandler(this.seatToolStripMenuItem1_Click);
+            // 
+            // riwayatToolStripMenuItem
+            // 
+            this.riwayatToolStripMenuItem.Name = "riwayatToolStripMenuItem";
+            this.riwayatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.riwayatToolStripMenuItem.Text = "Riwayat";
+            this.riwayatToolStripMenuItem.Click += new System.EventHandler(this.riwayatToolStripMenuItem_Click);
+            // 
+            // seatToolStripMenuItem
+            // 
+            this.seatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.profileToolStripMenuItem,
+            this.myTicketToolStripMenuItem});
+            this.seatToolStripMenuItem.Name = "seatToolStripMenuItem";
+            this.seatToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.seatToolStripMenuItem.Text = "User";
+            // 
+            // profileToolStripMenuItem
+            // 
+            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.profileToolStripMenuItem.Text = "Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
+            // 
+            // myTicketToolStripMenuItem
+            // 
+            this.myTicketToolStripMenuItem.Name = "myTicketToolStripMenuItem";
+            this.myTicketToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.myTicketToolStripMenuItem.Text = "My Ticket";
+            this.myTicketToolStripMenuItem.Click += new System.EventHandler(this.myTicketToolStripMenuItem_Click);
             // 
             // Parent
             // 
@@ -81,6 +135,12 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem movieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem riwayatTransaksiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TicketToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem theaterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seatToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem riwayatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem myTicketToolStripMenuItem;
     }
 }
