@@ -25,7 +25,7 @@ namespace FlickBook.Controllers
                 Headers =
                 {
                     { "accept", "application/json" },
-                    { "Authorization", "API" },
+                    { "Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlY2Q0ZGE4MjQ1MzE0ODNlMDBlMGRlMjM4OTBkZTEyZSIsIm5iZiI6MTczNzIxNTE1NS4xMjgsInN1YiI6IjY3OGJjY2IzZTQ1NjYzOTlhMjZkZDg5YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.tMlbKbxN4EmIIVYiHbkI60IrpU0eInZBf6Bh2fxAuJA" },
                 },
             };
 

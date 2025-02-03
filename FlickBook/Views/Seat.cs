@@ -18,7 +18,7 @@ namespace FlickBook.Views
 
         public void Tampil()
         {
-            dataTheater.DataSource = koneksi.ShowData("SELECT seat.seat_id, seat.seat_no, theater.theater_id, theater.theater_name FROM seat JOIN theater ON theater.theater_id = seat.theater_id");
+            dataTheater.DataSource = koneksi.ShowData("SELECT seat.seat_id, seat.seat_no, theater.theater_id, theater.theater_name FROM seat JOIN theater ON seat.seat_id = theater.theater_id");
             dataTheater.Columns[0].HeaderText = "ID Seat";
             dataTheater.Columns[1].HeaderText = "Nomor Seat";
             dataTheater.Columns[2].HeaderText = "ID Theater";
