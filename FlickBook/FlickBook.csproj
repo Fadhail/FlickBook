@@ -250,6 +250,8 @@
     <Compile Include="Controllers\CekLogin.cs" />
     <Compile Include="Controllers\Koneksi.cs" />
     <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Controllers\TheaterController.cs" />
     <Compile Include="Models\MovieModel.cs" />
@@ -286,6 +288,12 @@
     </Compile>
     <Compile Include="Views\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Riwayat.cs">
       <SubType>Form</SubType>
@@ -340,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Riwayat.resx">
       <DependentUpon>Riwayat.cs</DependentUpon>

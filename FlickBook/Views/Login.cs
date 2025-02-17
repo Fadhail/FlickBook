@@ -44,5 +44,12 @@ namespace FlickBook.Views
                 }
             }
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Register Register = new Register();
+            this.Hide();
+            Register.Show();
+        }
     }
 }
