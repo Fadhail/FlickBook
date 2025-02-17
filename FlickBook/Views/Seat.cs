@@ -21,7 +21,7 @@ namespace FlickBook.Views
 
         public void Tampil()
         {
-            dataTheater.DataSource = koneksi.ShowData("SELECT seat.seat_id, seat.seat_no, theater.theater_id, theater.theater_name FROM seat JOIN theater ON seat.seat_id = theater.theater_id");
+            dataTheater.DataSource = koneksi.ShowData("SELECT seat_id, seat_no, theater.theater_id, theater.theater_name FROM seat JOIN theater ON theater.theater_id = seat.theater_id");
             dataTheater.Columns[0].HeaderText = "ID Seat";
             dataTheater.Columns[1].HeaderText = "Nomor Seat";
             dataTheater.Columns[2].HeaderText = "ID Theater";
@@ -68,7 +68,43 @@ namespace FlickBook.Views
             {
                 Mseat.Seat_id = tbSeatID.Text;
                 Mseat.Seat_no = tbSeatNo.Text;
+                Mseat.Theater_id = cbTheater.Text;
                 Cseat.Insert(Mseat);
+                Reset();
+                Tampil();
+            }
+        }
+
+        private void dataTheater_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbSeatID.Text = dataTheater.Rows[e.RowIndex].Cells[0].Value.ToString();
+            tbSeatNo.Text = dataTheater.Rows[e.RowIndex].Cells[1].Value.ToString();
+            cbTheater.Text = dataTheater.Rows[e.RowIndex].Cells[2].Value.ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (tbSeatID.Text == "" || tbSeatNo.Text == "" || cbTheater.Text == "")
+            {
+                MessageBox.Show("Data tidak boleh kosong", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Mseat.Seat_id = tbSeatID.Text;
+                Mseat.Seat_no = tbSeatNo.Text;
+                Mseat.Theater_id = cbTheater.Text;
+                Cseat.Update(Mseat);
+                Reset();
+                Tampil();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Cseat.Delete(tbSeatID.Text);
                 Reset();
                 Tampil();
             }
