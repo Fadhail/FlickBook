@@ -78,6 +78,7 @@
             this.dataTheater.Name = "dataTheater";
             this.dataTheater.Size = new System.Drawing.Size(704, 501);
             this.dataTheater.TabIndex = 0;
+            this.dataTheater.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTheater_CellClick);
             // 
             // gbFormTheater
             // 

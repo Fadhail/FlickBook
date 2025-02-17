@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace FlickBook.Controllers
     {
         string connectionstring = "Server=localhost;Database=flickbook;Uid=root;Pwd=;";
         MySqlConnection connection;
+
+        public SqlConnection Connection { get; internal set; }
 
         public void OpenConnection()
         {
@@ -45,6 +48,11 @@ namespace FlickBook.Controllers
             MySqlCommand cmd = new MySqlCommand(Query_, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
+        }
+
+        internal void ExecuteQuery(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
