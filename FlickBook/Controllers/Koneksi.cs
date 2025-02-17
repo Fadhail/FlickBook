@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FlickBook.Controllers
 {
-    internal class Koneksi
+    class Koneksi
     {
         string connectionstring = "Server=localhost;Database=flickbook;Uid=root;Pwd=;";
         MySqlConnection connection;
@@ -27,7 +27,7 @@ namespace FlickBook.Controllers
             connection.Close();
         }
 
-        public void ExecuteQueries(string Query_)
+        public void ExecuteQuery(string Query_)
         {
             MySqlCommand cmd = new MySqlCommand(Query_, connection);
             cmd.ExecuteNonQuery();
@@ -43,16 +43,12 @@ namespace FlickBook.Controllers
             return datatable;
         }
 
-        public MySqlDataReader reader(string Query_)
+        public MySqlDataReader reader(string query)
         {
-            MySqlCommand cmd = new MySqlCommand(Query_, connection);
+            MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
             return reader;
         }
 
-        internal void ExecuteQuery(string v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

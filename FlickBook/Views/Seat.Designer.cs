@@ -78,6 +78,7 @@
             this.dataTheater.Name = "dataTheater";
             this.dataTheater.Size = new System.Drawing.Size(704, 501);
             this.dataTheater.TabIndex = 0;
+            this.dataTheater.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTheater_CellClick);
             // 
             // gbFormTheater
             // 
@@ -159,6 +160,7 @@
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
@@ -178,6 +180,7 @@
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // textBox1
             // 
