@@ -28,14 +28,14 @@ namespace FlickBook.Views
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            if (tbName.Text == "" || tbRegisterPassword.Text == "" || tbName.Text == "" || tbEmail.Text == "")
+            if (tbName.Text == "" || tbEmail.Text == "" || tbUsername.Text == "" || tbRegisterPassword.Text == "")
             {
                 MessageBox.Show("Username, Password, Nama, dan Email tidak boleh kosong!", "Peringatan");
                 return;
             }
 
             // Membuat instance RegisterModel dengan nama dan email
-            RegisterModel newUser = new RegisterModel(tbName.Text, tbRegisterPassword.Text, tbName.Text, tbEmail.Text);
+            RegisterModel newUser = new RegisterModel(tbName.Text, tbEmail.Text, tbName.Text, tbRegisterPassword.Text);
 
             // Membuat instance RegisterController
             RegisterController registerController = new RegisterController();

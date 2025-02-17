@@ -1,4 +1,6 @@
 ﻿using FlickBook.Controllers;
+using FlickBook.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,29 +13,20 @@ using System.Windows.Forms;
 
 namespace FlickBook.Views
 {
-    public partial class MovieDetail : Form
+    public partial class BookForm : Form
     {
+        Koneksi koneksi = new Koneksi();
+        TicketController Cticket = new TicketController();
+        TicketModel Mticket = new TicketModel();
         private readonly MovieController _movieController;
         private List<FlickBook.Models.Movie> _allMovies;
         private FlickBook.Models.Movie _selectedMovie;
 
-        public MovieDetail(string movieId)
+        public BookForm(string movieId)
         {
             InitializeComponent();
             _movieController = new MovieController();
             LoadMovieDetail(movieId);
-        }
-
-        private async void Movie_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                _allMovies = await _movieController.GetMoviesAsync();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to load movies: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private async void LoadMovieDetail(string movieId)
@@ -84,44 +77,38 @@ namespace FlickBook.Views
 
         private void DisplayMovieDetail(FlickBook.Models.Movie movie)
         {
-            movieName.Text = movie.Title + movie.Language;
-            ratingLabel.Text = "Rating: " + movie.Rating.Substring(0, 3) + "/10";
-            releaseLabel.Text = "Released: " + movie.ReleaseDate;
-            descriptionLabel.Text = movie.Description;
-            LoadImage(movie);
+            tbMovie.Text = movie.Title + movie.Language;
             LoadBackdrop(movie);
+            GetDataSeat();
         }
 
-        private void LoadImage(FlickBook.Models.Movie movie)
+        public void GetDataSeat()
         {
-            if (!string.IsNullOrEmpty(movie.Image))
+            koneksi.OpenConnection();
+            MySqlDataReader reader = koneksi.reader("SELECT * FROM seat");
+            while (reader.Read())
             {
-                try
-                {
-                    if (Uri.IsWellFormedUriString(movie.Image, UriKind.Absolute))
-                    {
-                        moviePict.Load(movie.Image);
-                    }
-                    else
-                    {
-                        moviePict.Image = Image.FromFile(movie.Image);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Failed to load image: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                int seat_no = reader.GetInt32("seat_no");
+                cbSeat.Items.Add(seat_no);
+            }
+            reader.Close();
+            koneksi.CloseConnection();
+        }
+
+        private void btnBooking_Click(object sender, EventArgs e)
+        {
+            if (tbMovie.Text == "" || cbSeat.Text == "" || cbClock.Text == "")
+            {
+                MessageBox.Show("Data tidak boleh kosong", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                moviePict.Image = null;
+                Mticket.Tittle = tbMovie.Text;
+                Mticket.Seat_id = cbSeat.Text;
+                Mticket.Clock = cbClock.Text;
+                Cticket.Insert(Mticket);
+                this.Close();
             }
-        }
-
-        private void Bookingbutton_Click(object sender, EventArgs e)
-        {
-            var bookForm = new BookForm(_selectedMovie.Id);
-            bookForm.Show();
         }
     }
 }

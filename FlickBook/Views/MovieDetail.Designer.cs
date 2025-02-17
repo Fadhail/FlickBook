@@ -113,6 +113,7 @@
             this.Bookingbutton.TabIndex = 5;
             this.Bookingbutton.Text = "Booking";
             this.Bookingbutton.UseVisualStyleBackColor = true;
+            this.Bookingbutton.Click += new System.EventHandler(this.Bookingbutton_Click);
             // 
             // backdropPict
             // 
