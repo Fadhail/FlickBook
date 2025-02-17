@@ -254,7 +254,7 @@
     <Compile Include="Controllers\TheaterController.cs" />
     <Compile Include="Models\MovieModel.cs" />
     <Compile Include="Models\SeatModel.cs" />
-    <Compile Include="Models\TheaterModels.cs" />
+    <Compile Include="Models\TheaterModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Login.cs">

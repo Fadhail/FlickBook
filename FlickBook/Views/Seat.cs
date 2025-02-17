@@ -1,4 +1,5 @@
 ﻿using FlickBook.Controllers;
+using FlickBook.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace FlickBook.Views
     public partial class Seat : Form
     {
         Koneksi koneksi = new Koneksi();
+        SeatModel Mseat = new SeatModel();
+        SeatController Cseat = new SeatController();
 
         public void Tampil()
         {
@@ -46,6 +49,29 @@ namespace FlickBook.Views
             }
             reader.Close();
             koneksi.CloseConnection();
+        }
+
+        public void Reset()
+        {
+            tbSeatID.Text = "";
+            tbSeatNo.Text = "";
+            cbTheater.Text = "";
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            if (tbSeatID.Text == "" || tbSeatNo.Text == "" || cbTheater.Text == "")
+            {
+                MessageBox.Show("Data tidak boleh kosong", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Mseat.Seat_id = tbSeatID.Text;
+                Mseat.Seat_no = tbSeatNo.Text;
+                Cseat.Insert(Mseat);
+                Reset();
+                Tampil();
+            }
         }
     }
 }
