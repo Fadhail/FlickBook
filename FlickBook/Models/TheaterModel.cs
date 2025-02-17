@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace FlickBook.Models
 {
-    internal class TheaterModels
+    internal class TheaterModel
     {
         string theater_id, name, location;
 
-        public TheaterModels()
+        public TheaterModel()
         {
 
         }
-        public TheaterModels(string theater_id, string name, string location)
+        public TheaterModel(string theater_id, string name, string location)
         {
             this.Theater_id = theater_id;
             this.Name = name;

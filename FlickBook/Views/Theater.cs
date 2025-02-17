@@ -1,4 +1,5 @@
 ﻿using FlickBook.Controllers;
+using FlickBook.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace FlickBook.Views
     public partial class Theater : Form
     {
         Koneksi koneksi = new Koneksi();
+        TheaterModel Mtheater = new TheaterModel();
+        TheaterController Ctheater = new TheaterController();
 
         public void Tampil()
         {
@@ -31,6 +34,47 @@ namespace FlickBook.Views
         private void Theater_Load(object sender, EventArgs e)
         {
             Tampil();
+        }
+
+        public void Reset()
+        {
+            tbTheaterID.Text = "";
+            tbTheaterName.Text = "";
+            tbLokasi.Text = "";
+        }   
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            if (tbTheaterID.Text == "" || tbTheaterName.Text == "" || tbLokasi.Text == "")
+            {
+                MessageBox.Show("Data tidak boleh kosong", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Mtheater.Theater_id = tbTheaterID.Text;
+                Mtheater.Name = tbTheaterName.Text;
+                Mtheater.Location = tbLokasi.Text;
+                Ctheater.Insert(Mtheater);
+                Reset();
+                Tampil();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Mtheater.Theater_id = tbTheaterID.Text;
+                Ctheater.Delete(Mtheater);
+                Reset();
+                Tampil();
+            }
         }
     }
 }

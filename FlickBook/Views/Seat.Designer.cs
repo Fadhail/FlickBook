@@ -32,18 +32,18 @@
             this.gbTabelSeat = new System.Windows.Forms.GroupBox();
             this.dataTheater = new System.Windows.Forms.DataGridView();
             this.gbFormTheater = new System.Windows.Forms.GroupBox();
+            this.cbTheater = new System.Windows.Forms.ComboBox();
             this.Theater = new System.Windows.Forms.Label();
             this.NoKursi = new System.Windows.Forms.Label();
             this.seatID = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tbSeatNo = new System.Windows.Forms.TextBox();
+            this.tbSeatID = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
-            this.cbTheater = new System.Windows.Forms.ComboBox();
             this.gbTabelSeat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTheater)).BeginInit();
             this.gbFormTheater.SuspendLayout();
@@ -85,17 +85,25 @@
             this.gbFormTheater.Controls.Add(this.Theater);
             this.gbFormTheater.Controls.Add(this.NoKursi);
             this.gbFormTheater.Controls.Add(this.seatID);
-            this.gbFormTheater.Controls.Add(this.textBox3);
-            this.gbFormTheater.Controls.Add(this.textBox2);
-            this.gbFormTheater.Controls.Add(this.button3);
-            this.gbFormTheater.Controls.Add(this.button2);
-            this.gbFormTheater.Controls.Add(this.button1);
+            this.gbFormTheater.Controls.Add(this.tbSeatNo);
+            this.gbFormTheater.Controls.Add(this.tbSeatID);
+            this.gbFormTheater.Controls.Add(this.btnUpdate);
+            this.gbFormTheater.Controls.Add(this.btnInsert);
+            this.gbFormTheater.Controls.Add(this.btnDelete);
             this.gbFormTheater.Location = new System.Drawing.Point(750, 80);
             this.gbFormTheater.Name = "gbFormTheater";
             this.gbFormTheater.Size = new System.Drawing.Size(302, 466);
             this.gbFormTheater.TabIndex = 2;
             this.gbFormTheater.TabStop = false;
             this.gbFormTheater.Text = "Form";
+            // 
+            // cbTheater
+            // 
+            this.cbTheater.FormattingEnabled = true;
+            this.cbTheater.Location = new System.Drawing.Point(19, 214);
+            this.cbTheater.Name = "cbTheater";
+            this.cbTheater.Size = new System.Drawing.Size(256, 21);
+            this.cbTheater.TabIndex = 9;
             // 
             // Theater
             // 
@@ -127,48 +135,49 @@
             this.seatID.TabIndex = 6;
             this.seatID.Text = "ID Seat";
             // 
-            // textBox3
+            // tbSeatNo
             // 
-            this.textBox3.Location = new System.Drawing.Point(16, 138);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(259, 30);
-            this.textBox3.TabIndex = 4;
+            this.tbSeatNo.Location = new System.Drawing.Point(16, 138);
+            this.tbSeatNo.Multiline = true;
+            this.tbSeatNo.Name = "tbSeatNo";
+            this.tbSeatNo.Size = new System.Drawing.Size(259, 30);
+            this.tbSeatNo.TabIndex = 4;
             // 
-            // textBox2
+            // tbSeatID
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 66);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(259, 30);
-            this.textBox2.TabIndex = 3;
+            this.tbSeatID.Location = new System.Drawing.Point(16, 66);
+            this.tbSeatID.Multiline = true;
+            this.tbSeatID.Name = "tbSeatID";
+            this.tbSeatID.Size = new System.Drawing.Size(259, 30);
+            this.tbSeatID.TabIndex = 3;
             // 
-            // button3
+            // btnUpdate
             // 
-            this.button3.Location = new System.Drawing.Point(19, 379);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(264, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(19, 379);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(264, 23);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnInsert
             // 
-            this.button2.Location = new System.Drawing.Point(16, 336);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(267, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnInsert.Location = new System.Drawing.Point(16, 336);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(267, 23);
+            this.btnInsert.TabIndex = 1;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Location = new System.Drawing.Point(19, 423);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(264, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(19, 423);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(264, 23);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -195,14 +204,6 @@
             this.btnExport.TabIndex = 5;
             this.btnExport.Text = "Export Excel";
             this.btnExport.UseVisualStyleBackColor = true;
-            // 
-            // cbTheater
-            // 
-            this.cbTheater.FormattingEnabled = true;
-            this.cbTheater.Location = new System.Drawing.Point(19, 214);
-            this.cbTheater.Name = "cbTheater";
-            this.cbTheater.Size = new System.Drawing.Size(256, 21);
-            this.cbTheater.TabIndex = 9;
             // 
             // Seat
             // 
@@ -235,13 +236,13 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TextBox tbSeatID;
         private System.Windows.Forms.Label NoKursi;
         private System.Windows.Forms.Label seatID;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbSeatNo;
         private System.Windows.Forms.Label Theater;
         private System.Windows.Forms.DataGridView dataTheater;
         private System.Windows.Forms.ComboBox cbTheater;
