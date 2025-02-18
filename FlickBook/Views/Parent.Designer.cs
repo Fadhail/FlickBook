@@ -35,7 +35,6 @@
             this.seatToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.riwayatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,39 +71,31 @@
             // theaterToolStripMenuItem
             // 
             this.theaterToolStripMenuItem.Name = "theaterToolStripMenuItem";
-            this.theaterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.theaterToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.theaterToolStripMenuItem.Text = "Theater";
             this.theaterToolStripMenuItem.Click += new System.EventHandler(this.theaterToolStripMenuItem_Click);
             // 
             // seatToolStripMenuItem1
             // 
             this.seatToolStripMenuItem1.Name = "seatToolStripMenuItem1";
-            this.seatToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.seatToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
             this.seatToolStripMenuItem1.Text = "Seat";
             this.seatToolStripMenuItem1.Click += new System.EventHandler(this.seatToolStripMenuItem1_Click);
             // 
             // riwayatToolStripMenuItem
             // 
             this.riwayatToolStripMenuItem.Name = "riwayatToolStripMenuItem";
-            this.riwayatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.riwayatToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.riwayatToolStripMenuItem.Text = "Riwayat";
             this.riwayatToolStripMenuItem.Click += new System.EventHandler(this.riwayatToolStripMenuItem_Click);
             // 
             // seatToolStripMenuItem
             // 
             this.seatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.profileToolStripMenuItem,
             this.myTicketToolStripMenuItem});
             this.seatToolStripMenuItem.Name = "seatToolStripMenuItem";
             this.seatToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.seatToolStripMenuItem.Text = "User";
-            // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.profileToolStripMenuItem.Text = "Profile";
-            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // myTicketToolStripMenuItem
             // 
@@ -140,7 +131,6 @@
         private System.Windows.Forms.ToolStripMenuItem seatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seatToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem riwayatToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem myTicketToolStripMenuItem;
     }
 }

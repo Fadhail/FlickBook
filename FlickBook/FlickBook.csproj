@@ -285,17 +285,17 @@
     <Compile Include="Views\MovieDetail.Designer.cs">
       <DependentUpon>MovieDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MyTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MyTicket.Designer.cs">
+      <DependentUpon>MyTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Parent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Parent.Designer.cs">
       <DependentUpon>Parent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Profile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Profile.Designer.cs">
-      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Register.cs">
       <SubType>Form</SubType>
@@ -354,11 +354,11 @@
     <EmbeddedResource Include="Views\MovieDetail.resx">
       <DependentUpon>MovieDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyTicket.resx">
+      <DependentUpon>MyTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Parent.resx">
       <DependentUpon>Parent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Profile.resx">
-      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>

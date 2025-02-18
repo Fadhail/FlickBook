@@ -57,17 +57,9 @@ namespace FlickBook.Views
             riwayat.Show();
         }
 
-        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Profile profile = new Profile();
-            profile.MdiParent = this;
-            profile.WindowState = FormWindowState.Maximized;
-            profile.Show();
-        }
-
         private void myTicketToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Ticket ticket = new Ticket();
+            MyTicket ticket = new MyTicket();
             ticket.MdiParent = this;
             ticket.WindowState = FormWindowState.Maximized;
             ticket.Show();

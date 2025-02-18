@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlickBook.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace FlickBook.Views
 {
     public partial class Ticket : Form
     {
+        Koneksi koneksi = new Koneksi();
+
         public Ticket()
         {
             InitializeComponent();
