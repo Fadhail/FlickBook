@@ -106,6 +106,7 @@
             this.tbRegisterPassword.Location = new System.Drawing.Point(147, 254);
             this.tbRegisterPassword.Multiline = true;
             this.tbRegisterPassword.Name = "tbRegisterPassword";
+            this.tbRegisterPassword.PasswordChar = '*';
             this.tbRegisterPassword.Size = new System.Drawing.Size(331, 34);
             this.tbRegisterPassword.TabIndex = 4;
             // 
@@ -168,7 +169,7 @@
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.tbRegisterPassword);
             this.Controls.Add(this.tbName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Register";
             this.Text = "Register";
             this.ResumeLayout(false);
