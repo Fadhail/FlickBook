@@ -38,7 +38,7 @@ namespace FlickBook.Controllers
             try
             {
                 koneksi.OpenConnection();
-                koneksi.ExecuteQuery("UPDATE seat SET seat_no = '" + seat.Seat_no + "', location = '" + seat.Theater_id + "' WHERE theater_id = '" + seat.Seat_id + "'");
+                koneksi.ExecuteQuery("UPDATE seat SET seat_no = '" + seat.Seat_no + "', theater_id = '" + seat.Theater_id + "' WHERE seat_id = '" + seat.Seat_id + "'");
                 status = true;
                 MessageBox.Show("Update Data Success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

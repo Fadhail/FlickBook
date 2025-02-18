@@ -40,10 +40,10 @@ namespace FlickBook.Controllers
                 // Query untuk menambahkan user baru
                 string query = "INSERT INTO users (username, password, name, email) VALUES (@username, @password, @name, @email)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@username", user.Username);
-                cmd.Parameters.AddWithValue("@password", user.Password);
                 cmd.Parameters.AddWithValue("@name", user.Name);
                 cmd.Parameters.AddWithValue("@email", user.Email);
+                cmd.Parameters.AddWithValue("@username", user.Username);
+                cmd.Parameters.AddWithValue("@password", user.Password);
 
                 cmd.ExecuteNonQuery();
                 conn.Close();
