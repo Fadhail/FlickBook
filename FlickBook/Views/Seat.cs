@@ -1,4 +1,5 @@
 ﻿using FlickBook.Controllers;
+using FlickBook.lib;
 using FlickBook.Models;
 using MySql.Data.MySqlClient;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,6 +109,38 @@ namespace FlickBook.Views
                 Cseat.Delete(tbSeatID.Text);
                 Reset();
                 Tampil();
+            }
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            dataTheater.DataSource = koneksi.ShowData("SELECT seat_id, seat_no, theater.theater_id, theater.theater_name FROM seat JOIN theater ON theater.theater_id = seat.theater_id WHERE seat_id LIKE '%" + tbSearch.Text + "%' OR seat_no LIKE '%" + tbSearch.Text + "%' OR theater.theater_id LIKE '%" + tbSearch.Text + "%' OR theater.theater_name LIKE '%" + tbSearch.Text + "%'");
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Excel Documents (*.xlsx) | *.xlsx";
+            save.FileName = "Report Seat.xlsx";
+
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                string directory = Path.GetDirectoryName(save.FileName);
+                string fileNameWithoutExt = Path.GetFileNameWithoutExtension(save.FileName);
+                string extension = Path.GetExtension(save.FileName);
+                int count = 1;
+                string filePath = save.FileName;
+
+                while (File.Exists(filePath))
+                {
+                    filePath = Path.Combine(directory, $"{fileNameWithoutExt} ({count}){extension}");
+                    count++;
+                }
+
+                Excel excel_lib = new Excel();
+                excel_lib.ExportToExcel(dataTheater, filePath);
+
+                MessageBox.Show("Data berhasil di export ke excel", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

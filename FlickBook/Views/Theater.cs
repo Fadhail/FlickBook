@@ -1,10 +1,12 @@
 ﻿using FlickBook.Controllers;
+using FlickBook.lib;
 using FlickBook.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -96,6 +98,31 @@ namespace FlickBook.Views
             }
         }
 
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Excel Documents (*.xlsx) | *.xlsx";
+            save.FileName = "Report Theater.xlsx";
 
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                string directory = Path.GetDirectoryName(save.FileName);
+                string fileNameWithoutExt = Path.GetFileNameWithoutExtension(save.FileName);
+                string extension = Path.GetExtension(save.FileName);
+                int count = 1;
+                string filePath = save.FileName;
+
+                while (File.Exists(filePath))
+                {
+                    filePath = Path.Combine(directory, $"{fileNameWithoutExt} ({count}){extension}");
+                    count++;
+                }
+
+                Excel excel_lib = new Excel();
+                excel_lib.ExportToExcel(dataTheater, filePath);
+
+                MessageBox.Show("Data berhasil di export ke excel", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

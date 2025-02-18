@@ -34,50 +34,47 @@ namespace FlickBook.Views
         {
             Tampil();
         }
+
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            // Ukuran kertas (8cm x 6cm dalam piksel untuk 300 dpi)
-            int paperWidth = 945;
-            int paperHeight = 709;
-
-            // Font dan brush
-            Font titleFont = new Font("Arial", 16, FontStyle.Bold);
+            // Define fonts and brushes
+            Font titleFont = new Font("Arial", 18, FontStyle.Bold);
             Font subTitleFont = new Font("Arial", 14, FontStyle.Bold);
             Font font = new Font("Arial", 12);
             Brush brush = Brushes.Black;
             Brush backgroundBrush = new SolidBrush(Color.LightYellow);
             Pen borderPen = new Pen(Color.Black, 1);
 
-            // Posisi awal margin
-            int margin = 10;
+            // Define layout dimensions
+            int margin = 20;
             int startX = margin;
             int startY = margin;
-            int width = paperWidth - (2 * margin);
-            int height = paperHeight - (2 * margin);
+            int width = e.PageBounds.Width - (2 * margin);
+            int height = e.PageBounds.Height - (2 * margin);
 
-            // Latar belakang
+            // Draw background
             e.Graphics.FillRectangle(backgroundBrush, startX, startY, width, height);
 
-            // Garis border
+            // Draw border
             e.Graphics.DrawRectangle(borderPen, startX, startY, width, height);
 
-            // Cetak Judul
+            // Print title
             int textY = startY + 10;
             e.Graphics.DrawString("RECEIPT", titleFont, brush, startX + 10, textY);
             textY += 30;
             e.Graphics.DrawString("Flickbook", subTitleFont, brush, startX + 10, textY);
 
-            // Garis pemisah
+            // Draw separator line
             textY += 30;
             e.Graphics.DrawLine(borderPen, startX + 10, textY, startX + width - 10, textY);
 
-            // Ambil data dari DataGridView
-            string date = "Date: " + dataTicket.SelectedRows[0].Cells[0].Value.ToString();
+            // Define ticket details
+            string date = "Time: " + dataTicket.SelectedRows[0].Cells[4].Value.ToString();
             string movie = "Movie: " + dataTicket.SelectedRows[0].Cells[1].Value.ToString();
             string seatNo = "Seat No: " + dataTicket.SelectedRows[0].Cells[2].Value.ToString();
             string theater = "Theater: " + dataTicket.SelectedRows[0].Cells[3].Value.ToString();
 
-            // Cetak isi tiket
+            // Print ticket details with spacing
             textY += 20;
             e.Graphics.DrawString(date, font, brush, startX + 10, textY);
             textY += 25;

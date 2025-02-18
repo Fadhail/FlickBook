@@ -117,7 +117,7 @@
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(30, 13);
             this.labelDate.TabIndex = 1;
-            this.labelDate.Text = "Date";
+            this.labelDate.Text = "Time";
             // 
             // labelClock
             // 

@@ -207,6 +207,7 @@
             this.btnExport.TabIndex = 5;
             this.btnExport.Text = "Export Excel";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // Theater
             // 
